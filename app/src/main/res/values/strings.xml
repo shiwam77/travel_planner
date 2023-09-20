@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Travel Planner</string>
+
+    <string name="default_todo_title">DefaultTodoTitle</string>
+    <string name="default_todo_date">DefaultTodoDate</string>
+    <string name="default_todo_description">DefaultTodoDescription</string>
+    <string name="date_icon_description">Icon for date information.</string>
+    <string name="edit_icon_description">Icon for editing the todo.</string>
+    <string name="favourite_icon_description">Icon of heart. Describes if todo is a favourite.</string>
+    <string name="done_icon_description">Icon of circles. Describes if todo is a done.</string>
+    <string name="delete_icon_name">Delete</string>
+    <string name="default_contacts_title">Linked Shop contacts</string>
+    <string name="default_no_contacts_title">No linked contacts</string>
+
+    // Add / Over / Edit view
+    <string name="add_button">Add todo</string>
+    <string name="save_button">Save changes</string>
+    <string name="add_contacts_button">Add contacts</string>
+    <string name="add_contacts_button_description">Plus icon for linking mere contacts with todo.</string>
+    <string name="title_label">Title</string>
+    <string name="expiry_label">Date</string>
+    <string name="time_label">Time</string>
+    <string name="description_label">Description</string>
+    <string name="done_label">Is done?</string>
+    <string name="favourite_label">Is favourite?</string>
+    <string name="default_contact_name">DefaultContactName</string>
+    <string name="default_contact_telephone">DefaultContactTelephone</string>
+    <string name="default_contact_email">DefaultContactEmail</string>
+    <string name="delete_contact_icon_description">Delete</string>
+    <string name="send_email_contact_icon_description">Icon of an email. Shares todo with contact.</string>
+    <string name="send_sms_contact_icon_description">Icon of an message. Shares todo with contact.</string>
+    <string name="phone_contact_icon_description">Icon of phone</string>
+    <string name="email_contact_icon_description">Icon of email</string>
+    <string name="picture_description">Profile picture of user.</string>
+    <string name="default_time">00:00</string>
+
+    // Menu
+    <string name="menu_date">Sort by date</string>
+    <string name="menu_favourites">Sort by favourites</string>
+    <string name="title_activity_login">Sign in</string>
+
+    // Login
+    <string name="login_title">Login</string>
+    <string name="login_email">Email</string>
+    <string name="login_password">Password</string>
+    <string name="button_sign_in">Sign in</string>
+    <string name="error_info">Wrong username or password!</string>
+</resources>

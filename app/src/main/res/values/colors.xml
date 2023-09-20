@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4081</color>
+
+    // Todo states
+    <color name="colorTodoTitleDefault">#000</color>
+    <color name="colorTodoTitleDone">#AAA</color>
+    <color name="colorTodoDescriptionDefault">#000</color>
+    <color name="colorTodoDateDefault">#AAA</color>
+    <color name="colorTodoDateExpired">#AA0000</color>
+
+    // Login
+    <color name="colorTextDefault">#000</color>
+    <color name="colorTextError">#AA0000</color>
+</resources>
