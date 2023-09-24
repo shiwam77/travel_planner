@@ -1,4 +1,4 @@
-package com.aoezdemir.todoapp.activity;
+package com.aoezdemir.todoapp.view;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -17,11 +17,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppDefaultTheme">
         <activity
-            android:name=".activity.RegisterActivity"
+            android:name=".view.RegisterActivity"
             android:theme="@style/AppLoginTheme">
         </activity>
         <activity
-            android:name=".activity.RouterEmptyActivity"
+            android:name=".view.RouterEmptyActivity"
             android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,29 +30,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".view.LoginActivity"
             android:theme="@style/AppLoginTheme" />
-        <activity android:name=".activity.OverviewActivity" />
+        <activity android:name=".view.OverviewActivity" />
         <activity
-            android:name=".activity.DetailviewActivity"
-            android:parentActivityName=".activity.OverviewActivity">
+            android:name=".view.DetailviewActivity"
+            android:parentActivityName=".view.OverviewActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.OverviewActivity" />
+                android:value=".view.OverviewActivity" />
         </activity>
         <activity
-            android:name=".activity.EditActivity"
-            android:parentActivityName=".activity.OverviewActivity">
+            android:name=".view.EditActivity"
+            android:parentActivityName=".view.OverviewActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.OverviewActivity" />
+                android:value=".view.OverviewActivity" />
         </activity>
         <activity
-            android:name=".activity.AddActivity"
-            android:parentActivityName=".activity.OverviewActivity">
+            android:name=".view.AddActivity"
+            android:parentActivityName=".view.OverviewActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".activity.OverviewActivity" />
+                android:value=".view.OverviewActivity" />
         </activity>
 
         

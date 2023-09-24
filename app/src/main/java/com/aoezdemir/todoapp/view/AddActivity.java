@@ -1,11 +1,9 @@
-package com.aoezdemir.todoapp.activity;
+package com.aoezdemir.todoapp.view;
 
 import android.Manifest;
-import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.location.LocationListener;
@@ -33,11 +31,11 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.aoezdemir.todoapp.R;
-import com.aoezdemir.todoapp.activity.adapter.ContactAdapter;
-import com.aoezdemir.todoapp.crud.local.TodoDBHelper;
+import com.aoezdemir.todoapp.view.adapter.ContactAdapter;
+import com.aoezdemir.todoapp.crud.database.TodoDBHelper;
 import com.aoezdemir.todoapp.model.Todo;
-import com.aoezdemir.todoapp.utils.AlertDialogMaker;
-import com.aoezdemir.todoapp.utils.ContactUtils;
+import com.aoezdemir.todoapp.components.AlertDialogMaker;
+import com.aoezdemir.todoapp.components.ContactUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

@@ -13,7 +13,7 @@
     <string name="default_no_contacts_title">No linked contacts</string>
 
     // Add / Over / Edit view
-    <string name="add_button">Add todo</string>
+    <string name="add_button">Add To Buy</string>
     <string name="save_button">Save changes</string>
     <string name="add_contacts_button">Add contacts</string>
     <string name="add_contacts_button_description">Plus icon for linking mere contacts with todo.</string>

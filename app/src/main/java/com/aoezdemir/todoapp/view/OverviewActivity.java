@@ -1,4 +1,4 @@
-package com.aoezdemir.todoapp.activity;
+package com.aoezdemir.todoapp.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -7,7 +7,6 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,9 +18,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aoezdemir.todoapp.R;
-import com.aoezdemir.todoapp.crud.local.TodoDBHelper;
+import com.aoezdemir.todoapp.crud.database.TodoDBHelper;
 import com.aoezdemir.todoapp.model.Todo;
-import com.aoezdemir.todoapp.utils.TodoListSorter;
+import com.aoezdemir.todoapp.components.TodoListSorter;
 
 import java.util.List;
 
@@ -61,7 +60,6 @@ public class OverviewActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_overview, menu);
         return true;
     }
 

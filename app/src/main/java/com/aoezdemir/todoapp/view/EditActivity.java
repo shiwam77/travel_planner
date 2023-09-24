@@ -1,4 +1,4 @@
-package com.aoezdemir.todoapp.activity;
+package com.aoezdemir.todoapp.view;
 
 import android.Manifest;
 import android.content.Intent;
@@ -15,7 +15,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
@@ -26,11 +25,11 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.aoezdemir.todoapp.R;
-import com.aoezdemir.todoapp.activity.adapter.ContactAdapter;
-import com.aoezdemir.todoapp.crud.local.TodoDBHelper;
+import com.aoezdemir.todoapp.view.adapter.ContactAdapter;
+import com.aoezdemir.todoapp.crud.database.TodoDBHelper;
 import com.aoezdemir.todoapp.model.Todo;
-import com.aoezdemir.todoapp.utils.AlertDialogMaker;
-import com.aoezdemir.todoapp.utils.ContactUtils;
+import com.aoezdemir.todoapp.components.AlertDialogMaker;
+import com.aoezdemir.todoapp.components.ContactUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -302,7 +301,7 @@ public class EditActivity extends AppCompatActivity {
 
     public void enableSaveButton() {
         bSaveTodo.setEnabled(true);
-        bSaveTodo.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
+        bSaveTodo.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
     }
 
     public void disableSaveButton() {

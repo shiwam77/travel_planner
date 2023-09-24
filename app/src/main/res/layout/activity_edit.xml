@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -10,16 +11,7 @@
         android:layout_height="wrap_content"
         android:isScrollContainer="true">
 
-        <TextView
-            android:id="@+id/tvEditTitleLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:labelFor="@+id/etEditTitle"
-            android:text="@string/title_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
         <EditText
             android:id="@+id/etEditTitle"
@@ -28,20 +20,15 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:ems="10"
+            android:hint="Title"
+            android:layout_marginTop="20dp"
             android:inputType="textPersonName"
+            android:background="@drawable/text_field_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEditTitleLabel" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvEditExpiryTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/expiry_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEditTitle" />
+
 
         <CalendarView
             android:id="@+id/cvEditExpiryDate"
@@ -52,7 +39,8 @@
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEditExpiryTitle" />
+            android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintTop_toBottomOf="@+id/etEditAddPrice" />
 
         <TextView
             android:id="@+id/tvEditTimeTitle"
@@ -62,7 +50,7 @@
             android:text="@string/time_label"
             android:labelFor="@+id/etEditTime"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvEditExpiryDate" />
+            app:layout_constraintTop_toBottomOf="@+id/etEditTitle" />
 
         <EditText
             android:id="@+id/etEditTime"
@@ -75,16 +63,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvEditTimeTitle" />
 
-        <TextView
-            android:id="@+id/tvEditDescriptionLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:labelFor="@+id/etEditDescription"
-            android:text="@string/description_label"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEditTime" />
+
 
         <EditText
             android:id="@+id/etEditDescription"
@@ -92,25 +71,15 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
+            android:hint="Description"
             android:inputType="text|textMultiLine"
+            android:background="@drawable/text_field_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvEditDescriptionLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/etEditTime" />
 
-
-
-        <TextView
-            android:id="@+id/tvAddPriceLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:labelFor="@+id/etAddDescription"
-            android:text="Price"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/etEditDescription" />
 
 
         <EditText
@@ -119,11 +88,14 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
+            android:hint="Price"
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvAddPriceLabel" />
+            android:background="@drawable/text_field_background"
+            app:layout_constraintTop_toBottomOf="@+id/etEditDescription" />
 
         <ImageView
             android:id="@+id/IVPreviewImage"
@@ -144,13 +116,15 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
+            android:background="@drawable/rectangle_shape"
+            android:paddingHorizontal="10dp"
             android:backgroundTint="@color/colorPrimary"
             android:text="Change Image"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IVPreviewImage"
+            app:layout_constraintTop_toBottomOf="@+id/cvEditExpiryDate"
             />
 
         <Switch

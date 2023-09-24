@@ -1,4 +1,4 @@
-package com.aoezdemir.todoapp.utils;
+package com.aoezdemir.todoapp.components;
 
 import com.aoezdemir.todoapp.model.Todo;
 

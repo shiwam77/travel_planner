@@ -1,35 +1,35 @@
-package com.aoezdemir.todoapp.activity;
+package com.aoezdemir.todoapp.view;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aoezdemir.todoapp.R;
 
-public class RegisterActivity extends AppCompatActivity {
 
+public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = LoginActivity.class.getSimpleName();
 
     private EditText etEmail;
     private EditText etPassword;
-    private EditText etConPassword;
     private Button bLogin;
-    private ProgressBar pbLogin;
+    private Button bRegister;
     private TextView tvErrorInfo;
+    private String globalEmail = "anitha77@gmail.com";
+    private String globalPassword = "123456";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_login);
         etEmail = findViewById(R.id.etLoginEmail);
         etEmail.addTextChangedListener(new TextWatcher() {
             @Override
@@ -57,7 +57,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
         etPassword = findViewById(R.id.etLoginPassword);
-        etConPassword = findViewById(R.id.etConLoginPassword);
         etPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -70,12 +69,10 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 tvErrorInfo.setVisibility(View.INVISIBLE);
-                String password = etPassword.getText().toString().trim();
-                String conPassword = etConPassword.getText().toString().trim();
                 if (isValidPassword()) {
                     etPassword.setError(null);
                     etPassword.setTextColor(getResources().getColor(R.color.colorTextDefault, null));
-                    if (isValidEmailAddress() && password.equals(conPassword)) {
+                    if (isValidEmailAddress()) {
                         enableLoginButton();
                     }
                 } else {
@@ -85,47 +82,31 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
-
-        etConPassword.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                tvErrorInfo.setVisibility(View.INVISIBLE);
-                String password = etPassword.getText().toString().trim();
-                if (password.equals(etConPassword.getText().toString().trim()) && isValidEmailAddress()) {
-                    etConPassword.setError(null);
-                    etConPassword.setTextColor(getResources().getColor(R.color.colorTextDefault, null));
-                    if (isValidEmailAddress()) {
-                        enableLoginButton();
-                    }
-                } else {
-                    etConPassword.setError("Confirm password does not matched");
-                    etConPassword.setTextColor(getResources().getColor(R.color.colorTextError, null));
-                    disableLoginButton();
-                }
-            }
-        });
         tvErrorInfo = findViewById(R.id.tvErrorInfo);
         tvErrorInfo.setVisibility(View.INVISIBLE);
-        pbLogin = findViewById(R.id.pbLogin);
-        pbLogin.setVisibility(View.INVISIBLE);
+
         bLogin = findViewById(R.id.bLogin);
+        bRegister = findViewById(R.id.bRegister);
         disableLoginButton();
+        bRegister.setOnClickListener((View v) ->{
+            Intent intent = new Intent(v.getContext(), RegisterActivity.class);
+            startActivity(intent);
+        });
         bLogin.setOnClickListener((View v) -> {
             String email = etEmail.getText().toString();
             String password = etPassword.getText().toString();
-            pbLogin.setVisibility(View.VISIBLE);
-            Intent intent = new Intent(v.getContext(), OverviewActivity.class);
-            intent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, true);
-            startActivity(intent);
-            pbLogin.setVisibility(View.INVISIBLE);
+
+            if(email.trim().equals(globalEmail.trim()) && password.trim().equals(globalPassword.trim())
+            || !email.trim().equals(globalEmail.trim())
+            ){
+                Intent intent = new Intent(v.getContext(), OverviewActivity.class);
+                intent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, true);
+                startActivity(intent);
+            }else{
+                tvErrorInfo.setVisibility(View.VISIBLE);
+                Toast.makeText(v.getContext(), "Local error: Failed to authenticate user (client error)", Toast.LENGTH_SHORT).show();
+
+            }
         });
     }
 
@@ -141,7 +122,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void enableLoginButton() {
         bLogin.setEnabled(true);
-        bLogin.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
+        bLogin.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
     }
 
     private void disableLoginButton() {

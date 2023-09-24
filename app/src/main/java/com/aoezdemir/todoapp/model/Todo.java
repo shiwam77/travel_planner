@@ -3,7 +3,7 @@ package com.aoezdemir.todoapp.model;
 import android.content.ContentValues;
 import android.database.Cursor;
 
-import com.aoezdemir.todoapp.crud.local.TodoDBHelper;
+import com.aoezdemir.todoapp.crud.database.TodoDBHelper;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;

@@ -1,4 +1,4 @@
-package com.aoezdemir.todoapp.activity;
+package com.aoezdemir.todoapp.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,6 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -26,10 +25,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aoezdemir.todoapp.R;
-import com.aoezdemir.todoapp.activity.adapter.ContactAdapter;
-import com.aoezdemir.todoapp.crud.local.TodoDBHelper;
+import com.aoezdemir.todoapp.view.adapter.ContactAdapter;
+import com.aoezdemir.todoapp.crud.database.TodoDBHelper;
 import com.aoezdemir.todoapp.model.Todo;
-import com.aoezdemir.todoapp.utils.ContactUtils;
+import com.aoezdemir.todoapp.components.ContactUtils;
 
 import java.util.Objects;
 

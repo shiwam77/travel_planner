@@ -1,4 +1,4 @@
-package com.aoezdemir.todoapp.crud.local;
+package com.aoezdemir.todoapp.crud.database;
 
 import android.content.Context;
 import android.database.Cursor;

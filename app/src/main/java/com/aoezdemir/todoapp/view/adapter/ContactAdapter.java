@@ -1,15 +1,12 @@
-package com.aoezdemir.todoapp.activity.adapter;
+package com.aoezdemir.todoapp.view.adapter;
 
-import android.Manifest;
 import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -21,9 +18,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.aoezdemir.todoapp.R;
-import com.aoezdemir.todoapp.activity.EditActivity;
+import com.aoezdemir.todoapp.view.EditActivity;
 import com.aoezdemir.todoapp.model.Todo;
-import com.aoezdemir.todoapp.utils.ContactUtils;
+import com.aoezdemir.todoapp.components.ContactUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
