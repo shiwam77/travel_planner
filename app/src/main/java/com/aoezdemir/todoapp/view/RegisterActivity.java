@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.aoezdemir.todoapp.R;
+import com.aoezdemir.todoapp.crud.database.TodoDBHelper;
+import com.aoezdemir.todoapp.model.Todo;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -21,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etPassword;
     private EditText etConPassword;
     private Button bLogin;
+    private TodoDBHelper db;
     private TextView tvErrorInfo;
 
     @Override

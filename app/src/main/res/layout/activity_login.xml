@@ -44,7 +44,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Password"
-        android:inputType="numberPassword"
+
         android:background="@drawable/text_field_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

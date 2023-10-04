@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +36,7 @@ public class OverviewActivity extends AppCompatActivity {
     private List<Todo> todos;
     private TodoDBHelper db;
     private boolean sortDateBased = true;
+    BottomNavigationView navBar;
 
 
     @Override
@@ -49,6 +51,27 @@ public class OverviewActivity extends AppCompatActivity {
         db = new TodoDBHelper(this);
         todos = db.getAllTodos();
         initializeUIElements();
+        navBar = findViewById(R.id.bottom_nav);
+        navBar.setSelectedItemId(R.id.menu_home);
+        navBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case  R.id.menu_home:
+                        return true;
+                    case R.id.menu_product:
+                        startActivity(new Intent(getApplicationContext(),AddActivity.class));
+                        overridePendingTransition(0,0);
+                        return  true;
+                    case R.id.menu_setting:
+                        startActivity(new Intent(getApplicationContext(),SettingActivity.class));
+                        overridePendingTransition(0,0);
+                        return  true;
+                }
+             return  false;
+            }
+        });
     }
 
     @Override
@@ -58,15 +81,20 @@ public class OverviewActivity extends AppCompatActivity {
         super.onResume();
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_overview, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() != R.id.iSort) {
-            sortDateBased = item.getItemId() == R.id.iSortDate;
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
             updateAdapter();
         }
         return super.onOptionsItemSelected(item);
@@ -99,11 +127,7 @@ public class OverviewActivity extends AppCompatActivity {
         ovAdapter = new OverviewAdapter();
         todos = TodoListSorter.sort(todos, sortDateBased);
         rvOverview.setAdapter(ovAdapter);
-        findViewById(R.id.fabAddTodo).setOnClickListener((View v) -> {
-            Intent intent = new Intent(this, AddActivity.class);
-            intent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, false);
-            startActivityForResult(intent, REQUEST_CREATE_NEW_TODO);
-        });
+
     }
 
     class OverviewAdapter extends RecyclerView.Adapter<OverviewAdapter.OverviewViewHolder> {

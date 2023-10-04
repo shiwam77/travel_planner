@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Travel Planner</string>
+    <string name="app_name">Suit Case</string>
 
     <string name="default_todo_title">DefaultTodoTitle</string>
     <string name="default_todo_date">DefaultTodoDate</string>
@@ -35,7 +35,7 @@
     <string name="default_time">00:00</string>
 
     // Menu
-    <string name="menu_date">Sort by date</string>
+    <string name="menu_date">Logout</string>
     <string name="menu_favourites">Sort by favourites</string>
     <string name="title_activity_login">Sign in</string>
 

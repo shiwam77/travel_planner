@@ -206,4 +206,6 @@ public class Todo implements Serializable {
                 ", expiry = " + expiry + ", done = " + done + ", image = " + image + " favourite = " + favourite +
                 ", contacts = " + android.text.TextUtils.join(",", contacts) + "}";
     }
+
+
 }

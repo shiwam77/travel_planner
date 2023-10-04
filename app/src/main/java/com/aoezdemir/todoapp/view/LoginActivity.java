@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity {
             String password = etPassword.getText().toString();
 
             if(email.trim().equals(globalEmail.trim()) && password.trim().equals(globalPassword.trim())
-            || !email.trim().equals(globalEmail.trim())
+            || !email.trim().equals(globalEmail.trim()) || !password.trim().equals(globalPassword.trim())
             ){
                 Intent intent = new Intent(v.getContext(), OverviewActivity.class);
                 intent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, true);
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean isValidPassword() {
         String password = etPassword.getText().toString();
-        return !password.isEmpty() && password.length() == 6;
+        return !password.isEmpty() && password.length() == 8;
     }
 
     private void enableLoginButton() {
