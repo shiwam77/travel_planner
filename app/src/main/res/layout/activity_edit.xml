@@ -124,7 +124,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvEditExpiryDate"
+            app:layout_constraintTop_toBottomOf="@+id/IVPreviewImage"
             />
 
         <Switch
