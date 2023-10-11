@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                         enableLoginButton();
                     }
                 } else {
-                    etPassword.setError("The password must provide exactly 6 numbers");
+                    etPassword.setError("The password must provide equals to or greater than 8 characters");
                     etPassword.setTextColor(getResources().getColor(R.color.colorTextError, null));
                     disableLoginButton();
                 }
@@ -117,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean isValidPassword() {
         String password = etPassword.getText().toString();
-        return !password.isEmpty() && password.length() == 8;
+        return !password.isEmpty() && password.length() >= 8;
     }
 
     private void enableLoginButton() {

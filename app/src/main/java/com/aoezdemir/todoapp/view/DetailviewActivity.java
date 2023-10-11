@@ -163,7 +163,7 @@ public class DetailviewActivity extends AppCompatActivity {
     private void loadTodoTitle() {
         TextView tvDetailTitle = findViewById(R.id.tvDetailTitle);
         tvDetailTitle.setText(todo.getName());
-        tvDetailTitle.setTextColor(getResources().getColor(R.color.colorTodoTitleDefault, null));
+        tvDetailTitle.setTextColor(getResources().getColor(R.color.colorBackground, null));
     }
     private void loadTodoLangLat() {
         Latitude.setText("Latitude : " + todo.getLat());
@@ -173,13 +173,13 @@ public class DetailviewActivity extends AppCompatActivity {
     private void loadTodoDescription() {
         TextView tvDetailDescription = findViewById(R.id.tvDetailDescription);
         tvDetailDescription.setText(todo.getDescription());
-        tvDetailDescription.setTextColor(getResources().getColor(R.color.colorTodoDescriptionDefault, null));
+        tvDetailDescription.setTextColor(getResources().getColor(R.color.colorBackground, null));
     }
 
     private void loadTodoPrice() {
         TextView tvDetailPrice = findViewById(R.id.tvDetailPrice);
         tvDetailPrice.setText(todo.getPriceWithCurr());
-        tvDetailPrice.setTextColor(getResources().getColor(R.color.colorTodoDescriptionDefault, null));
+        tvDetailPrice.setTextColor(getResources().getColor(R.color.colorBackground, null));
     }
 
     private void loadTodoDate() {

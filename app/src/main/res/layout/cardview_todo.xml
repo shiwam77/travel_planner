@@ -31,7 +31,7 @@
             android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
             android:text="@string/default_todo_title"
-            android:textColor="@android:color/black"
+            android:textColor="@color/colorBackground"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/ibDone"
             app:layout_constraintTop_toTopOf="parent" />

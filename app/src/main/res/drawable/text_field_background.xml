@@ -1,6 +1,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/colorWhite"/>
-    <stroke android:width="1dip" android:color="@color/colorTodoTitleDone"/>
+    <stroke android:width="1dip" android:color="@color/cardview_dark_background"/>
     <corners android:bottomLeftRadius="10dp"
         android:bottomRightRadius="10dp"
         android:topLeftRadius="10dp"
