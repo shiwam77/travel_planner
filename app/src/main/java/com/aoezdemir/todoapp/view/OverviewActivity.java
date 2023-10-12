@@ -214,7 +214,7 @@ public class OverviewActivity extends AppCompatActivity {
             }
 
             private void initTodoDate(Todo todo) {
-                int textColor = todo.isDone() ? R.color.colorTodoDateDefault : todo.isExpired() ? R.color.colorTodoDateExpired : R.color.colorTodoDateDefault;
+                int textColor = todo.isDone() ? R.color.colorTodoDateDefault : todo.isExpired() ? R.color.colorTodoDateExpired : R.color.colorTodoDescriptionDefault;
                 tvTodoDate.setText(todo.formatExpiry());
                 tvTodoDate.setTextColor(view.getResources().getColor(textColor, null));
                 ivDateIcon.setImageDrawable(view.getResources().getDrawable(todo.isDone() ? R.drawable.ic_event_note_dark_gray_24dp : todo.isExpired() ? R.drawable.ic_event_note_red_24dp : R.drawable.ic_event_note_dark_gray_24dp, null));

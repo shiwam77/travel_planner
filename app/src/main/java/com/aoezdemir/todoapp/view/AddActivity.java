@@ -459,7 +459,7 @@ public class AddActivity extends AppCompatActivity {
 
     public void enableAddButton() {
         bAddTodo.setEnabled(true);
-        bAddTodo.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
+        bAddTodo.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
     }
 
     public void disableAddButton() {

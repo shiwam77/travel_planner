@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:background="#62cc65"
+
     app:contentPadding="5dp">
 
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="#62cc65"
         android:layout_height="match_parent">
 
         <ImageButton
@@ -44,7 +47,7 @@
             android:layout_marginStart="2dp"
             android:layout_marginTop="2dp"
             android:text="@string/default_todo_date"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@color/colorTodoDescriptionDefault"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivDateIcon"
