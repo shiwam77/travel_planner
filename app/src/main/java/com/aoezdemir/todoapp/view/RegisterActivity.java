@@ -79,7 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                         enableLoginButton();
                     }
                 } else {
-                    etPassword.setError("The password must provide equals to or greater than 8 characters");
+                    etPassword.setError("The password must be equals  or greater than 8 characters");
                     etPassword.setTextColor(getResources().getColor(R.color.colorTextError, null));
                     disableLoginButton();
                 }

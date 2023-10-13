@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button bLogin;
     private Button bRegister;
     private TextView tvErrorInfo;
-    private String globalEmail = "anitha77@gmail.com";
+    private String globalEmail = "sailesh77@gmail.com";
     private String globalPassword = "123456";
 
     @Override
@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                         enableLoginButton();
                     }
                 } else {
-                    etPassword.setError("The password must provide equals to or greater than 8 characters");
+                    etPassword.setError("The password must be equals  or greater than 8 characters");
                     etPassword.setTextColor(getResources().getColor(R.color.colorTextError, null));
                     disableLoginButton();
                 }
