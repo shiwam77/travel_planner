@@ -302,7 +302,7 @@ public class EditActivity extends AppCompatActivity {
 
     public void enableSaveButton() {
         bSaveTodo.setEnabled(true);
-        bSaveTodo.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
+        bSaveTodo.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
     }
 
     public void disableSaveButton() {

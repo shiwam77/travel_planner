@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/clDetailTodoFrame"
     android:layout_width="match_parent"
+    android:background="@color/cardview_dark_background"
     android:layout_height="match_parent">
 
     <ScrollView
@@ -118,12 +119,13 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="32dp"
-                android:backgroundTint="@color/colorPrimary"
-                android:text="Get Direction"
-                android:textColor="@android:color/white"
+                android:layout_marginHorizontal="20dp"                android:background="@drawable/rectangle"
+                android:textAllCaps="false"                android:text="Get Direction"
                 android:textSize="18sp"
+                android:textColor="@color/cardview_light_background"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Longitude"
+                app:layout_constraintTop_toBottomOf="@+id/IVPreviewImage"
                 />
 
             <Button
@@ -132,7 +134,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="32dp"
-                android:backgroundTint="@color/colorPrimary"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rectangle"
+                android:textAllCaps="false"
                 android:text="Ask Family to buy for you"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"
@@ -140,27 +145,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/openMap"
                 />
 
-            <TextView
-                android:id="@+id/Latitude"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:labelFor="@+id/etAddDescription"
-                android:text="Latitude"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/addressTitle" />
 
             <TextView
-                android:id="@+id/Longitude"
+                android:id="@+id/addressTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginTop="16dp"
-                android:labelFor="@+id/etAddDescription"
-                android:text="Latitude"
+                android:textSize="25sp"
+                android:textColor="@color/cardview_light_background"
+                android:text="Shop Address Details"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/Latitude" />
+                app:layout_constraintTop_toBottomOf="@+id/AskFamilyBtn"/>
 
             <TextView
                 android:id="@+id/tvDetailContacts"
@@ -171,18 +167,8 @@
                 android:text="@string/default_contacts_title"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/AskFamilyBtn" />
+                app:layout_constraintTop_toBottomOf="@+id/addressTitle" />
 
-            <TextView
-                android:id="@+id/addressTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="16dp"
-                android:textSize="25sp"
-                android:text="Shop Address Details"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/IVPreviewImage"/>
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvDetailContacts"
@@ -206,6 +192,7 @@
         android:clickable="true"
         android:focusable="true"
         android:scaleType="center"
+        android:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_edit_white_24dp" />

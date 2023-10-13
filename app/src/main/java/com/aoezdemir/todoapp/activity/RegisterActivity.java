@@ -23,7 +23,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText etPassword;
     private EditText etConPassword;
     private Button bLogin;
-    private ProgressBar pbLogin;
     private TextView tvErrorInfo;
 
     @Override
@@ -45,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 tvErrorInfo.setVisibility(View.INVISIBLE);
                 if (isValidEmailAddress()) {
                     etEmail.setError(null);
-                    etEmail.setTextColor(getResources().getColor(R.color.colorTextDefault, null));
+                    etEmail.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
                     if (isValidPassword()) {
                         enableLoginButton();
                     }
@@ -74,12 +73,12 @@ public class RegisterActivity extends AppCompatActivity {
                 String conPassword = etConPassword.getText().toString().trim();
                 if (isValidPassword()) {
                     etPassword.setError(null);
-                    etPassword.setTextColor(getResources().getColor(R.color.colorTextDefault, null));
+                    etPassword.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
                     if (isValidEmailAddress() && password.equals(conPassword)) {
                         enableLoginButton();
                     }
                 } else {
-                    etPassword.setError("The password must provide exactly 6 numbers");
+                    etPassword.setError("The password must be equals  or greater than 8 characters");
                     etPassword.setTextColor(getResources().getColor(R.color.colorTextError, null));
                     disableLoginButton();
                 }
@@ -114,18 +113,15 @@ public class RegisterActivity extends AppCompatActivity {
         });
         tvErrorInfo = findViewById(R.id.tvErrorInfo);
         tvErrorInfo.setVisibility(View.INVISIBLE);
-        pbLogin = findViewById(R.id.pbLogin);
-        pbLogin.setVisibility(View.INVISIBLE);
         bLogin = findViewById(R.id.bLogin);
         disableLoginButton();
         bLogin.setOnClickListener((View v) -> {
             String email = etEmail.getText().toString();
             String password = etPassword.getText().toString();
-            pbLogin.setVisibility(View.VISIBLE);
             Intent intent = new Intent(v.getContext(), OverviewActivity.class);
             intent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, true);
             startActivity(intent);
-            pbLogin.setVisibility(View.INVISIBLE);
+
         });
     }
 
@@ -136,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private boolean isValidPassword() {
         String password = etPassword.getText().toString();
-        return !password.isEmpty() && password.length() == 6;
+        return !password.isEmpty() && password.length() >= 8;
     }
 
     private void enableLoginButton() {

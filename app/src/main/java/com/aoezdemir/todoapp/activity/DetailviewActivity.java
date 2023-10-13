@@ -49,16 +49,13 @@ public class DetailviewActivity extends AppCompatActivity {
     private float mAccelCurrent;
     private float mAccelLast;
 
-    private TextView Latitude;
-    private TextView Longitude;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        Latitude = findViewById(R.id.Latitude);
-        Longitude = findViewById(R.id.Longitude);
+
 
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
@@ -141,7 +138,7 @@ public class DetailviewActivity extends AppCompatActivity {
 
     private void initializeDetailView() {
         loadTodoTitle();
-        loadTodoLangLat();
+
         loadTodoDescription();
         loadTodoDate();
         loadTodoDoneIcon();
@@ -164,28 +161,25 @@ public class DetailviewActivity extends AppCompatActivity {
     private void loadTodoTitle() {
         TextView tvDetailTitle = findViewById(R.id.tvDetailTitle);
         tvDetailTitle.setText(todo.getName());
-        tvDetailTitle.setTextColor(getResources().getColor(R.color.colorTodoTitleDefault, null));
+        tvDetailTitle.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
     }
-    private void loadTodoLangLat() {
-        Latitude.setText("Latitude : " + todo.getLat());
-        Longitude.setText("Longitude : " + todo.getLang());
-    }
+
 
     private void loadTodoDescription() {
         TextView tvDetailDescription = findViewById(R.id.tvDetailDescription);
         tvDetailDescription.setText(todo.getDescription());
-        tvDetailDescription.setTextColor(getResources().getColor(R.color.colorTodoDescriptionDefault, null));
+        tvDetailDescription.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
     }
 
     private void loadTodoPrice() {
         TextView tvDetailPrice = findViewById(R.id.tvDetailPrice);
         tvDetailPrice.setText(todo.getPriceWithCurr());
-        tvDetailPrice.setTextColor(getResources().getColor(R.color.colorTodoDescriptionDefault, null));
+        tvDetailPrice.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
     }
 
     private void loadTodoDate() {
         TextView tvDetailDate = findViewById(R.id.tvDetailDate);
-        int textColor = todo.isDone() ? R.color.colorTodoDateDefault : todo.isExpired() ? R.color.colorTodoDateExpired : R.color.colorTodoDateDefault;
+        int textColor = todo.isDone() ? R.color.cardview_light_background : todo.isExpired() ? R.color.colorTodoDateExpired : R.color.colorTodoDateDefault;
         tvDetailDate.setText(todo.formatExpiry());
         tvDetailDate.setTextColor(getResources().getColor(textColor, null));
         ((ImageView) findViewById(R.id.ivDetailDateIcon)).setImageDrawable(getResources().getDrawable(todo.isDone() ? R.drawable.ic_event_note_dark_gray_24dp : todo.isExpired() ? R.drawable.ic_event_note_red_24dp : R.drawable.ic_event_note_dark_gray_24dp, null));

@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/cardview_dark_background"
     android:layout_height="match_parent">
 
     <android.support.constraint.ConstraintLayout
@@ -18,6 +19,8 @@
             android:layout_marginTop="16dp"
             android:labelFor="@+id/etAddTitle"
             android:text="@string/title_label"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,6 +31,8 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:ems="10"
+            android:textColor="@color/cardview_light_background"
+
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -40,6 +45,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/expiry_label"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etAddTitle" />
 
@@ -61,6 +68,8 @@
             android:layout_marginStart="16dp"
             android:text="@string/time_label"
             android:labelFor="@+id/etAddTime"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cvAddExpiryDate" />
 
@@ -72,6 +81,8 @@
             android:ems="10"
             android:inputType="time"
             android:text="@string/default_time"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAddTimeTitle" />
 
@@ -83,6 +94,8 @@
             android:layout_marginTop="16dp"
             android:labelFor="@+id/etAddDescription"
             android:text="@string/description_label"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etAddTime" />
 
@@ -93,6 +106,8 @@
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
             android:ems="10"
+            android:textColor="@color/cardview_light_background"
+
             android:inputType="text|textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,6 +122,8 @@
             android:layout_marginTop="16dp"
             android:labelFor="@+id/etAddDescription"
             android:text="Price"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etAddDescription" />
 
@@ -119,6 +136,8 @@
             android:layout_marginStart="16dp"
             android:ems="10"
             android:inputType="number"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvAddPriceLabel" />
@@ -144,8 +163,9 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:text="SELECT IMAGE"
+            android:background="@drawable/rectangle"
+            android:textAllCaps="false"
+            android:text="Select Image"
             android:textColor="@android:color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +181,8 @@
             android:layout_marginTop="16dp"
             android:labelFor="@+id/etAddDescription"
             android:text="Latitude"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/BSelectImage" />
 
@@ -181,6 +203,8 @@
             android:layout_centerInParent="true"
             android:foregroundGravity="center"
             android:visibility="visible"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/Latitude"
             style="?android:attr/progressBarStyleLarge" />
@@ -190,7 +214,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:backgroundTint="@color/colorPrimary"
+            android:background="@drawable/rectangle"
+            android:textAllCaps="false"
             android:text="Fetch Location"
             android:textColor="@android:color/white"
             android:textSize="18sp"
@@ -205,6 +230,8 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="@string/favourite_label"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/bAddLocation" />
 
@@ -217,6 +244,8 @@
             android:layout_marginTop="16dp"
             android:text="@string/default_contacts_title"
             android:textSize="18sp"
+            android:textColor="@color/cardview_light_background"
+
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sAddFavourite" />
 
@@ -226,6 +255,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
+            android:textColor="@color/cardview_light_background"
+
             android:background="?android:selectableItemBackground"
             android:contentDescription="@string/add_contacts_button_description"
             app:layout_constraintStart_toEndOf="@+id/tvAddContacts"

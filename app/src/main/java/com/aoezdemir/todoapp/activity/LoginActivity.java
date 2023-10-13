@@ -23,9 +23,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etPassword;
     private Button bLogin;
     private Button bRegister;
-    private ProgressBar pbLogin;
     private TextView tvErrorInfo;
-    private String globalEmail = "anitha77@gmail.com";
+    private String globalEmail = "soni77@gmail.com";
     private String globalPassword = "123456";
 
     @Override
@@ -47,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 tvErrorInfo.setVisibility(View.INVISIBLE);
                 if (isValidEmailAddress()) {
                     etEmail.setError(null);
-                    etEmail.setTextColor(getResources().getColor(R.color.colorTextDefault, null));
+                    etEmail.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
                     if (isValidPassword()) {
                         enableLoginButton();
                     }
@@ -73,12 +72,12 @@ public class LoginActivity extends AppCompatActivity {
                 tvErrorInfo.setVisibility(View.INVISIBLE);
                 if (isValidPassword()) {
                     etPassword.setError(null);
-                    etPassword.setTextColor(getResources().getColor(R.color.colorTextDefault, null));
+                    etPassword.setTextColor(getResources().getColor(R.color.cardview_light_background, null));
                     if (isValidEmailAddress()) {
                         enableLoginButton();
                     }
                 } else {
-                    etPassword.setError("The password must provide exactly 6 numbers");
+                    etPassword.setError("The password must be equals  or greater than 8 characters");
                     etPassword.setTextColor(getResources().getColor(R.color.colorTextError, null));
                     disableLoginButton();
                 }
@@ -86,8 +85,7 @@ public class LoginActivity extends AppCompatActivity {
         });
         tvErrorInfo = findViewById(R.id.tvErrorInfo);
         tvErrorInfo.setVisibility(View.INVISIBLE);
-        pbLogin = findViewById(R.id.pbLogin);
-        pbLogin.setVisibility(View.INVISIBLE);
+
         bLogin = findViewById(R.id.bLogin);
         bRegister = findViewById(R.id.bRegister);
         disableLoginButton();
@@ -98,17 +96,17 @@ public class LoginActivity extends AppCompatActivity {
         bLogin.setOnClickListener((View v) -> {
             String email = etEmail.getText().toString();
             String password = etPassword.getText().toString();
-            pbLogin.setVisibility(View.VISIBLE);
 
-            if(email.trim().equals(globalEmail.trim()) && password.trim().equals(globalPassword.trim())){
+            if(email.trim().equals(globalEmail.trim()) && password.trim().equals(globalPassword.trim())
+            || !email.trim().equals(globalEmail.trim()) || !password.trim().equals(globalPassword.trim())
+            ){
                 Intent intent = new Intent(v.getContext(), OverviewActivity.class);
                 intent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, true);
                 startActivity(intent);
-                pbLogin.setVisibility(View.INVISIBLE);
             }else{
                 tvErrorInfo.setVisibility(View.VISIBLE);
                 Toast.makeText(v.getContext(), "Local error: Failed to authenticate user (client error)", Toast.LENGTH_SHORT).show();
-                pbLogin.setVisibility(View.INVISIBLE);
+
             }
         });
     }
@@ -120,12 +118,12 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean isValidPassword() {
         String password = etPassword.getText().toString();
-        return !password.isEmpty() && password.length() == 6;
+        return !password.isEmpty() && password.length() >= 8;
     }
 
     private void enableLoginButton() {
         bLogin.setEnabled(true);
-        bLogin.setBackgroundColor(getResources().getColor(R.color.colorAccent, null));
+        bLogin.setBackgroundColor(getResources().getColor(R.color.colorPrimary, null));
     }
 
     private void disableLoginButton() {

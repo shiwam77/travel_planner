@@ -71,6 +71,16 @@ public class OverviewActivity extends AppCompatActivity {
             sortDateBased = item.getItemId() == R.id.iSortDate;
             updateAdapter();
         }
+        if(item.getItemId() == R.id.logout){
+            // Create an intent to open the LoginActivity
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+
+            // Clear the back stack and start LoginActivity as a new task
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+            // Start LoginActivity
+            startActivity(intent);
+        }
         return super.onOptionsItemSelected(item);
     }
 
