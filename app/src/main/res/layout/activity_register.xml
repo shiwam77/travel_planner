@@ -23,6 +23,8 @@
         android:layout_marginTop="200dp"
         android:labelFor="@+id/etLoginEmail"
         android:text="@string/login_email"
+        android:textColor="@color/cardview_light_background"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,6 +51,8 @@
         android:layout_marginTop="16dp"
         android:labelFor="@+id/etLoginPassword"
         android:text="@string/login_password"
+        android:textColor="@color/cardview_light_background"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etLoginEmail" />
 
@@ -76,6 +80,8 @@
         android:layout_marginTop="16dp"
         android:labelFor="@+id/etLoginPassword"
         android:text="Confirm password"
+        android:textColor="@color/cardview_light_background"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etLoginPassword" />
 
