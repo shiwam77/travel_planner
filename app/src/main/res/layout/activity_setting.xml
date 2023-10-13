@@ -19,53 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/more"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
 
-        android:background="@drawable/text_field_background"
-        android:text="More Information"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Help" />
-
-    <Button
-        android:id="@+id/notification"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-
-        android:layout_marginTop="36dp"
-        android:background="@drawable/text_field_background"
-        android:text="Notification"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/more" />
-
-    <Button
-        android:id="@+id/Help"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="28dp"
-        android:background="@drawable/text_field_background"
-        android:text="Help and Support"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        app:layout_constraintVertical_bias="0.151" />
 
     <Button
         android:id="@+id/logoutButton"
@@ -81,7 +35,7 @@
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notification" />
+        app:layout_constraintTop_toBottomOf="@+id/image" />
 
 
 </android.support.constraint.ConstraintLayout>

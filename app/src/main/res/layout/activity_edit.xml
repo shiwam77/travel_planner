@@ -51,7 +51,7 @@
             android:layout_marginTop="50dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:backgroundTint="@color/colorBackground"
+            android:backgroundTint="@color/screenBackground"
             android:background="@color/colorPrimary"
             android:focusedMonthDateColor="@color/cardview_dark_background"
             app:layout_constraintTop_toBottomOf="@+id/BSelectImage" />

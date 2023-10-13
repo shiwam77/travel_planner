@@ -26,7 +26,7 @@
         app:layout_constraintTop_toBottomOf="@+id/rvOverview"
         app:layout_constraintVertical_bias="1.0"
         app:menu="@menu/bottom_navigation_menu"
-        android:background="@color/colorTodoDateDefault"
+        android:background="@color/colorTodoDateExpired"
         tools:layout_editor_absoluteX="-32dp" />
 
 </android.support.constraint.ConstraintLayout>

@@ -189,9 +189,7 @@ public class OverviewActivity extends AppCompatActivity {
             private TextView tvTodoTitle;
             private TextView tvTodoDate;
             private ImageView ivDateIcon;
-            private ImageButton ibEdit;
             private ImageButton ibFavoriteToggle;
-            private ImageButton ibDelete;
             private TodoDBHelper db;
 
             OverviewViewHolder(View v, OverviewAdapter a) {
@@ -202,9 +200,7 @@ public class OverviewActivity extends AppCompatActivity {
                 tvTodoTitle = view.findViewById(R.id.tvTodoTitle);
                 tvTodoDate = view.findViewById(R.id.tvTodoDate);
                 ivDateIcon = view.findViewById(R.id.ivDateIcon);
-                ibEdit = view.findViewById(R.id.ibEdit);
                 ibFavoriteToggle = view.findViewById(R.id.ibFavouriteToggle);
-                ibDelete = view.findViewById(R.id.ibDelete);
                 db = new TodoDBHelper(view.getContext());
             }
 
@@ -250,37 +246,14 @@ public class OverviewActivity extends AppCompatActivity {
                 });
             }
 
-            private void initTodoEdit(Todo todo) {
-                ibEdit.setVisibility(todo.isDone() ? View.INVISIBLE : View.VISIBLE);
-                ibEdit.setOnClickListener((View v) -> {
-                    Intent editIntent = new Intent(view.getContext(), EditActivity.class);
-                    editIntent.putExtra(EditActivity.INTENT_KEY_TODO, todo);
-                    editIntent.putExtra(RouterEmptyActivity.INTENT_IS_WEB_API_ACCESSIBLE, false);
-                    ((Activity) view.getContext()).startActivityForResult(editIntent, REQUEST_EDIT_TODO);
-                });
-            }
 
-            private void initTodoDelete(Todo todo, int position) {
-                ibDelete.setVisibility(todo.isDone() ? View.VISIBLE : View.INVISIBLE);
-                ibDelete.setOnClickListener((View v) -> {
-                    todos.remove(position);
-                    boolean dbDeletionSucceeded = db.deleteTodo(todo.getId());
-                    if (dbDeletionSucceeded) {
-                        adapter.notifyItemRemoved(position);
-                        adapter.notifyDataSetChanged();
-                    } else {
-                        Toast.makeText(view.getContext(), "Local error: Failed to deleteAllTodos todo", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
 
             void loadTodo(Todo todo, int position) {
                 initTodoTitle(todo);
                 initTodoDate(todo);
                 initTodoDoneToggle(todo);
                 initTodoFavouriteToggle(todo);
-                initTodoEdit(todo);
-                initTodoDelete(todo, position);
+
             }
         }
     }
